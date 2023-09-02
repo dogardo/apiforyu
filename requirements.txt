@@ -1,4 +1,4 @@
 django
-ckeditor
+django-ckeditor
 django-js-assets
-crispy_forms
+django-crispy-forms
