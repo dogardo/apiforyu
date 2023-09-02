@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+
+
+  <meta content="Templines" name="author">
+  <meta content="TeamHost" name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="format-detection" content="telephone=no">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+
+    <title>Api For You</title>
+
+
+  {% load static %}
+
+
+
+
+
+  <link href="{% static 'assets/img/favicon.png' %}" rel="shortcut icon" type="image/x-icon">
+  <link href="{% static 'assets/css/libs.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/showcase.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+  
+  <style>
+    @font-face {
+        font-family: "bnkgoth";
+        src: url("static/assets/fonts/bnkgothl.ttf");
+    }
+
+    @font-face {
+        font-family: "candara";
+        src: url("static/assets/fonts/candara.ttf");
+    }
+    </style>
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<body class="page-home" style="background-image: url(/static/images/bgcode.jpg);">
+
+
+
+  <!-- Loader end-->
+
+  <div class="page-wrapper">
+    <header class="page-header" style="box-shadow: 0 10px 10px  rgba(59, 1, 174, 0.1);">
+        <div class="page-header__inner">
+            <div class="page-header__sidebar">
+                <div class="page-header__menu-btn"><button class="menu-btn ico_menu is-active"></button></div>
+                
+
+            </div>
+
+            <div class="page-header__content">
+
+                <div class="page-header__search">
+                    <div class="search">
+                        
+   
+                      
+                        
+
+                        
+                    </div>
+                </div>
+
+                <div class="page-header__logo">
+                    <a href="#">
+                        <img src="/static/assets/img/apiforyou6.png" style="min-width: 120px;" alt="logo">
+                    </a>
+                </div>
+    
+    
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </header>
+      
+
+
+
+
+    
+      <div class="page-content" style="background-color: rgb(255, 255, 255); background-size: 300%; padding-bottom: 0px;" style=" uk-dark"" >
+
+
+          <aside class="sidebar is-show" id="sidebar" style="z-index: 9999;" style="box-shadow: rgba(0, 0, 0, 0.05);"  >
+              <div class="sidebar-box">
+                  <ul class="uk-nav">
+                      <li id="home-page-nav"><a href="/"><i class="ico_"><img style="max-height: 110%;float: right;" src="{% static 'assets/img/svgico/home.svg' %}" alt="x"></i><span>Anasayfa</span></a></li>
+                      
+                      <li><a href="/about"><i class="ico_"><img style="max-height: 130%; " src="{% static 'assets/img/svgico/message.svg' %}" alt="x"></i><span>İletişim</span></a></li>
+
+                      <li><a href="/howtouse"><i class="ico_"><img style="max-height: 80%; " src="{% static 'assets/img/svgico/help.svg' %}" alt="x"></i><span>Kurulum Adımları</span></a></li>
+                    
+              </div>
+          </aside>
+
+
+
+          {% block bodyx %}
+
+
+          {% endblock bodyx %}
+  
+          
+
+        </div>
+
+
+
+
+
+
+</body>
+
+
+
+<script src="/static/assets/js/libs.js"></script>
+<script src="/static/assets/js/main.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var currentPath = window.location.pathname;
+        var sidebarListElems = document.getElementsByClassName('sidebar-box')[0].querySelectorAll('li');
+        var activeElement = null;
+
+        for (let index = 0; index < sidebarListElems.length; index++) {
+            const element = sidebarListElems[index];
+            const anchorElement = element.querySelector('a');
+
+            if (anchorElement) {
+                const href = anchorElement.getAttribute('href');
+                
+                // Check if the current path matches the link's href
+                if (currentPath === href) {
+                    activeElement = element;
+                    break;
+                }
+
+                // Check if the current path is a subpath of the link's href (e.g., "/a/b" is a subpath of "/a")
+                if (currentPath.startsWith(href) && href !== "/") {
+                    activeElement = element;
+                }
+            }
+        }
+
+        // Add the 'uk-active' class to the active element
+        if (activeElement) {
+            activeElement.classList.add('uk-active');
+        }
+    });
+</script>
+
+
+
+
+
+
+
+<style>
+    .my-notification {
+        background-color: #F8F8F8; /* Özel arkaplan rengi */
+        color: #333333; /* Özel metin rengi */
+        border-radius: 5px; /* Köşeleri yuvarlatma */
+        padding: 10px; /* İçerik boşluğu */
+    }
+</style>
+
+
+
+
+
+
+</body>
+
+
+</html>
