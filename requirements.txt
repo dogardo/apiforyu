@@ -1,3 +1,4 @@
 django
 ckeditor
 django-js-assets
+crispy_forms
